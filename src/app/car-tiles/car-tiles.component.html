@@ -1,0 +1,24 @@
+<div>
+  Available colors:
+  <div *ngFor="let color of colors">{{color}}</div>
+</div>
+
+<hr />
+
+<div [ngSwitch]="selectedColor">
+  <span *ngSwitchCase="'red'">Wybrano czerwony</span>
+  <span *ngSwitchCase="'green'">Wybrano zielony</span>
+  <span *ngSwitchCase="'blue'">Wybrano niebieski</span>
+  <span *ngSwitchDefault>Nie wybrano koloru</span>
+</div>
+
+<hr />
+
+<app-car-tile *ngFor="let car of cars"
+              [available]="car.available"
+              [carName]="car.name"
+              [carPrice]="car.price"
+              [numberOfSeats]="5"
+              [limit]="600"
+              [deposit]="'brak'">
+</app-car-tile>

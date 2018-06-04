@@ -1,0 +1,29 @@
+<div class="tile"
+     [class.unavailable]="available === false">
+  <div class="tile-header">{{carName}}</div>
+  <img class="tile-img" alt="Fiat" src="assets/images/cars/car-1.png"/>
+  <table class="tile-description">
+    <tbody>
+    <tr *ngIf="numberOfSeats">
+      <td>Miejsc</td>
+      <td>{{numberOfSeats}}</td>
+    </tr>
+    <tr *ngIf="limit">
+      <td>Lączny limit kilometrów:</td>
+      <td>{{limit}}</td>
+    </tr>
+    <tr *ngIf="deposit">
+      <td>Kaucja</td>
+      <td>{{deposit}}</td>
+    </tr>
+    <tr *ngIf="carPrice">
+      <td>Cena za dobę</td>
+      <td>{{carPrice | currency:'EUR':'code'}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="tile-action" (click)="onRentCar()">
+    <a *ngIf="available">Zarezerwuj!</a>
+    <a *ngIf="available===false">niedostpny</a>
+  </div>
+</div>
