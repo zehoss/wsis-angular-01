@@ -1,0 +1,16 @@
+.gray-section {
+  background-color: #e1e1e1;
+  padding: 50px;
+}
+
+nav a {
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+nav a.active {
+  font-weight: bold;
+  border: 1px lightgray solid;
+}

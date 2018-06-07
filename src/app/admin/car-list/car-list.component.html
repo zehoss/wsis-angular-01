@@ -1,0 +1,27 @@
+<div class="gray-section admin-section">
+  <div class="container">
+
+    <div *ngIf="!carList || carList.length === 0">Brak samochodow w bazie!</div>
+
+    <table *ngIf="carList.length > 0">
+      <thead>
+      <tr>
+        <th>Auto</th>
+        <th>Cena</th>
+        <th>Dostępność</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let car of carList">
+        <td>{{car.name}}</td>
+        <td>{{car.price}}</td>
+        <td>{{car.available}}</td>
+        <!--<td><a routerLink="{{car.id}}">Szczegoly</a></td>-->
+        <td><a [routerLink]="[car.id]">Szczegoly</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

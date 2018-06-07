@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CarsService} from '../cars.service';
 import {Car} from '../car';
-import {MessageService} from '../message.service';
+import {MessageService} from '../message/message.service';
 
 @Component({
   selector: 'app-car-tiles',
