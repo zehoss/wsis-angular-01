@@ -17,6 +17,7 @@ const routes: Routes = [
     children: [
       {path: "", redirectTo: 'cars', pathMatch: 'full'},
       {path: "cars", component: CarListComponent},
+      {path: "cars/new", component: CarDetailsEditComponent},
       {path: "cars/:id", component: CarDetailsComponent},
       {path: "cars/:id/edit", component: CarDetailsEditComponent},
       {path: "customers", component: CustomerListComponent},

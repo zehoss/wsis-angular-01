@@ -16,6 +16,8 @@ import {CustomerListComponent} from './admin/customer-list/customer-list.compone
 import {RentalHistoryComponent} from './admin/rental-history/rental-history.component';
 import {CarDetailsEditComponent} from './admin/car-details-edit/car-details-edit.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

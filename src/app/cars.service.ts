@@ -19,9 +19,18 @@ export class CarsService {
 
   getCars(): Observable<Car[]> {
     return of(this.cars);
+    // return fromPromise(
+    //   new Promise(resolve =>
+    //     setTimeout(() => resolve(this.cars), 3000)
+    //   )
+    // );
   }
 
   getCarById(id: number): Car {
     return this.cars.find(car => car.id === id);
+  }
+
+  addCar(car: Car): void {
+    this.cars.push(car);
   }
 }

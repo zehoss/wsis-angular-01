@@ -1,6 +1,8 @@
 <div class="gray-section admin-section">
   <div class="container">
 
+    <a routerLink="/admin/cars/new">Uwtorz nowy samochod</a>
+
     <div *ngIf="!carList || carList.length === 0">Brak samochodow w bazie!</div>
 
     <table *ngIf="carList.length > 0">
