@@ -3,9 +3,9 @@
 
     <a routerLink="/admin/cars/new">Uwtorz nowy samochod</a>
 
-    <div *ngIf="!carList || carList.length === 0">Brak samochodow w bazie!</div>
+    <div *ngIf="carList == undefined || carList.length === 0">Brak samochodow w bazie!</div>
 
-    <table *ngIf="carList.length > 0">
+    <table *ngIf="carList != undefined && carList.length > 0">
       <thead>
       <tr>
         <th>Auto</th>

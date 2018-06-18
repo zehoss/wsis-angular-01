@@ -2,9 +2,9 @@
 
 
   <form (ngSubmit)="onSubmit()" #form="ngForm">
-    <div>Name: <input type="text" [(ngModel)]="name" name="name" required></div>
+    <div>Name: <input type="text" [(ngModel)]="car.name" name="name" required></div>
     Nazwa pojazdu: {{name}}
-    <div>Price: <input type="text" [ngModel]="defaultPrice" name="price" required></div>
+    <div>Price: <input type="text" [ngModel]="car.price" name="price" required></div>
     <div>Contact email: <input type="text" ngModel name="price" email></div>
     <div>Available:
       <select ngModel name="available">

@@ -1,36 +1,27 @@
 import {Injectable} from '@angular/core';
-import {Car} from './car';
-import {Observable, of} from 'rxjs';
+import {Car, CarPage} from './car';
+import {Observable} from 'rxjs';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
 
-  private cars: Car[];
+  private restApiUrl = "http://dev.blackfernsoft.pl:8088/rental";
 
-  constructor() {
-    this.cars = [
-      {id: 1, name: 'Fiat', price: 200, available: true},
-      {id: 2, name: 'Ford', price: 280, available: false},
-      {id: 3, name: 'Volvo', price: 400, available: true}
-    ];
+  constructor(private httpClient: HttpClient) {
   }
 
-  getCars(): Observable<Car[]> {
-    return of(this.cars);
-    // return fromPromise(
-    //   new Promise(resolve =>
-    //     setTimeout(() => resolve(this.cars), 3000)
-    //   )
-    // );
+  getCars(): Observable<CarPage> {
+    return this.httpClient.get(this.restApiUrl + "/cars");
   }
 
-  getCarById(id: number): Car {
-    return this.cars.find(car => car.id === id);
+  getCarById(id: number): Observable<Car> {
+    return this.httpClient.get(this.restApiUrl + `/cars/${id}`);
   }
 
-  addCar(car: Car): void {
-    this.cars.push(car);
+  addCar(car: Car): Observable<Car> {
+    return this.httpClient.post(this.restApiUrl + "/cars", car);
   }
 }
