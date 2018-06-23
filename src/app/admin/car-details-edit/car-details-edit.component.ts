@@ -34,12 +34,13 @@ export class CarDetailsEditComponent implements OnInit {
     console.log(this.form.valid);
     console.log(this.form.dirty);
     console.log(this.form.touched);
-    // if (this.form.valid) {
-    //   console.log('this.car', this.car);
-    //   this.carsService.addCar(this.car).subscribe(value => {
-    //     this.router.navigate(['/admin/cars']);
-    //   });
-    // }
+
+    if (this.form.valid) {
+      console.log('this.car', this.car);
+      this.carsService.addCar(this.car).subscribe(value => {
+        this.router.navigate(['/admin/cars']);
+      });
+    }
   }
 
 }
