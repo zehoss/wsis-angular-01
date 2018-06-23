@@ -18,6 +18,7 @@ import {CarDetailsEditComponent} from './admin/car-details-edit/car-details-edit
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {MinValueDirective} from './admin/car-details-edit/min-value.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {HttpClientModule} from "@angular/common/http";
     CustomerListComponent,
     RentalHistoryComponent,
     CarDetailsEditComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MinValueDirective
   ],
   imports: [
     BrowserModule,

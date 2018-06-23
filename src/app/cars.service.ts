@@ -14,14 +14,18 @@ export class CarsService {
   }
 
   getCars(): Observable<CarPage> {
-    return this.httpClient.get(this.restApiUrl + "/cars");
+    return this.httpClient.get<CarPage>(this.restApiUrl + "/cars");
   }
 
   getCarById(id: number): Observable<Car> {
-    return this.httpClient.get(this.restApiUrl + `/cars/${id}`);
+    return this.httpClient.get<Car>(this.restApiUrl + `/cars/${id}`);
   }
 
   addCar(car: Car): Observable<Car> {
-    return this.httpClient.post(this.restApiUrl + "/cars", car);
+    return this.httpClient.post<Car>(this.restApiUrl + "/cars", car);
+  }
+
+  delete(id: number): Observable<Car> {
+    return this.httpClient.delete<Car>(this.restApiUrl + `/cars/${id}`);
   }
 }

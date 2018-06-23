@@ -2,17 +2,21 @@
 
 
   <form (ngSubmit)="onSubmit()" #form="ngForm">
-    <div>Name: <input type="text" [(ngModel)]="car.name" name="name" required></div>
-    Nazwa pojazdu: {{name}}
-    <div>Price: <input type="text" [ngModel]="car.price" name="price" required></div>
-    <div>Contact email: <input type="text" ngModel name="price" email></div>
+    <div>Name:
+      <input type="text" [(ngModel)]="car.name" name="name" #name="ngModel" required minlength="2">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">Nieprawidlowa nazwa samochodu</div>
+    </div>
+    <div>Price:
+      <input type="text" [(ngModel)]="car.price" name="price" #price="ngModel" appMinValue="50" required>
+      <div *ngIf="price.invalid && (price.dirty || price.touched)">Cena jest wymagana</div>
+    </div>
     <div>Available:
-      <select ngModel name="available">
+      <select [(ngModel)]="car.available" name="available">
         <option value="true">True</option>
         <option value="false">False</option>
       </select>
     </div>
-    <button type="submit">Zapisz</button>
+    <button type="submit" [disabled]="form.invalid && (form.dirty || form.touched)">Zapisz</button>
   </form>
 
 </div>
