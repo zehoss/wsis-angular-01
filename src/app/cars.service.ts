@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 import {Car, CarPage} from './car';
 import {Observable} from 'rxjs';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
 
-  private restApiUrl = "http://dev.blackfernsoft.pl:8088/rental";
+  private restApiUrl = 'http://ec2-34-241-12-63.eu-west-1.compute.amazonaws.com:8080';
 
   constructor(private httpClient: HttpClient) {
   }
@@ -36,18 +36,18 @@ export class CarsService {
     //   });
 
 
-    return this.httpClient.get<CarPage>(this.restApiUrl + "/cars");
+    return this.httpClient.get<CarPage>(`${this.restApiUrl}/cars`);
   }
 
   getCarById(id: number): Observable<Car> {
-    return this.httpClient.get<Car>(this.restApiUrl + `/cars/${id}`);
+    return this.httpClient.get<Car>(`${this.restApiUrl}/cars/${id}`);
   }
 
   addCar(car: Car): Observable<Car> {
-    return this.httpClient.post<Car>(this.restApiUrl + "/cars", car);
+    return this.httpClient.post<Car>(`${this.restApiUrl}/cars`, car);
   }
 
   delete(id: number): Observable<Car> {
-    return this.httpClient.delete<Car>(this.restApiUrl + `/cars/${id}`);
+    return this.httpClient.delete<Car>(`${this.restApiUrl}/cars/${id}`);
   }
 }

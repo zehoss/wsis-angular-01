@@ -9,16 +9,15 @@ import {MainContentComponent} from './main-content/main-content.component';
 import {CarTilesComponent} from './car-tiles/car-tiles.component';
 import {FooterComponent} from './footer/footer.component';
 import {AdminComponent} from './admin/admin.component';
-import {AppRoutingModule} from "./app-routing.module";
+import {AppRoutingModule} from './app-routing.module';
 import {CarListComponent} from './admin/car-list/car-list.component';
 import {CarDetailsComponent} from './admin/car-details/car-details.component';
 import {CustomerListComponent} from './admin/customer-list/customer-list.component';
 import {RentalHistoryComponent} from './admin/rental-history/rental-history.component';
 import {CarDetailsEditComponent} from './admin/car-details-edit/car-details-edit.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-import {MinValueDirective} from './admin/car-details-edit/min-value.directive';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import {MinValueDirective} from './admin/car-details-edit/min-value.directive';
     CustomerListComponent,
     RentalHistoryComponent,
     CarDetailsEditComponent,
-    PageNotFoundComponent,
-    MinValueDirective
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
